@@ -1,0 +1,6 @@
+outputs*
+*.pyc
+*.sw[po]
+*.png
+*.csv
+*.pth
