@@ -84,60 +84,6 @@ class _netG(nn.Module):
         img = self.resblocks(img)
         img = self.conv_blocks2(img)
         return img
-#
-# class _netD(nn.Module):
-#     def __init__(self, ngpu, num_classes=2):
-#         super(_netD, self).__init__()
-#         self.ngpu = ngpu
-#
-#         self.convblocks = nn.Sequential(
-#             nn.Conv2d(1, 16, 3, 2, 1, bias=False),
-#             nn.LeakyReLU(0.2, inplace=True),
-#             nn.Dropout(0.55, inplace=False),
-#
-#             nn.Conv2d(16, 32, 3, 1, 0, bias=False),
-#             nn.BatchNorm2d(32),
-#             nn.LeakyReLU(0.2, inplace=True),
-#             nn.Dropout(0.55, inplace=False),
-#
-#             nn.Conv2d(32, 64, 3, 2, 1, bias=False),
-#             nn.BatchNorm2d(64),
-#             nn.LeakyReLU(0.2, inplace=True),
-#             nn.Dropout(0.55, inplace=False),
-#
-#             nn.Conv2d(64, 128, 3, 1, 0, bias=False),
-#             nn.BatchNorm2d(128),
-#             nn.LeakyReLU(0.2, inplace=True),
-#             nn.Dropout(0.55, inplace=False),
-#
-#             nn.Conv2d(128, 256, 3, 2, 1, bias=False),
-#             nn.BatchNorm2d(256),
-#             nn.LeakyReLU(0.2, inplace=True),
-#             nn.Dropout(0.55, inplace=False),
-#
-#             nn.Conv2d(256, 512, 3, 1, 0, bias=False),
-#             nn.BatchNorm2d(512),
-#             nn.LeakyReLU(0.2, inplace=True),
-#             nn.Dropout(0.55, inplace=False),
-#
-#             nn.Conv2d(512, 1024, 3, 1, 0, bias=False),
-#             nn.BatchNorm2d(1024),
-#             nn.LeakyReLU(0.2, inplace=True),
-#             nn.Dropout(0.55, inplace=False),
-#         )
-#         # discriminator fc
-#         self.fc_dis = nn.Sequential(nn.Linear(22*22*1024, 1), nn.Sigmoid())
-#         # aux-classifier fc
-#         self.fc_aux = nn.Linear(22*22*1024, num_classes)
-#
-#     def forward(self, input):
-#         conv = self.convblocks(input)
-#         # print(conv.shape)
-#         flat7 = conv.view(-1, 22*22*1024)
-#         fc_dis = self.fc_dis(flat7)
-#         fc_aux = self.fc_aux(flat7)
-#         realfake = fc_dis.view(-1, 1).squeeze(1)
-#         return realfake, fc_aux
 
 
 class _netD(nn.Module):
