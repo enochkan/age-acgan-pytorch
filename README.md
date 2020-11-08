@@ -1,4 +1,4 @@
-# Conditional Image Synthesis With Auxiliary Classifier GANs
+# Age-Conditioned Synthesis of Pediatric Computed Tomography with Auxiliary Classifier Generative Adversarial Networks
 
 This is the official implementation of the [paper](https://arxiv.org/abs/2002.00011) "Age-Conditioned Synthesis of Pediatric Computed Tomography with Auxiliary Classifier Generative Adversarial Networks" in PyTorch.
 
